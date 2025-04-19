@@ -102,7 +102,7 @@
   }
   
   .btn-secondary {
-    @apply bg-white hover:bg-gray-100 text-furniture-dark-gray border border-furniture-gray/20 font-medium py-3 px-6 rounded-sm transition-colors duration-200;
+    @apply bg-white hover:bg-gray-100 text-furniture-dark-gray border border-furniture-gray/20 font-medium py-3 px-6 rounded-sm transition-colors duration-200 dark:bg-gray-800 dark:text-white dark:hover:bg-gray-700 dark:border-gray-700;
   }
 
   .section-padding {
@@ -110,10 +110,23 @@
   }
 
   .section-title {
-    @apply text-3xl md:text-4xl font-medium text-furniture-dark-gray mb-4;
+    @apply text-3xl md:text-4xl font-medium text-furniture-dark-gray mb-4 dark:text-white;
   }
 
   .section-subtitle {
-    @apply text-furniture-gray text-lg mb-10 max-w-2xl mx-auto;
+    @apply text-furniture-gray text-lg mb-10 max-w-2xl mx-auto dark:text-gray-300;
+  }
+  
+  /* Dark mode specific styles */
+  .dark .bg-furniture-light-gray {
+    @apply bg-gray-900;
+  }
+  
+  .dark .bg-furniture-beige {
+    @apply bg-gray-800;
+  }
+  
+  .dark .bg-white {
+    @apply bg-gray-900;
   }
 }
