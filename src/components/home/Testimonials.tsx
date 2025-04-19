@@ -16,7 +16,7 @@ const testimonials = [
     role: "Home Owner",
     quote:
       "After searching for months, I finally found the perfect dining set at Furnimal. Excellent quality and the customer service was outstanding.",
-    avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=1287&ixlib=rb-4.0.3",
+    avatar: "https://i.postimg.cc/bwQcNG8f/pexels-nkhajotia-1486064.jpg",
   },
   {
     id: "3",
