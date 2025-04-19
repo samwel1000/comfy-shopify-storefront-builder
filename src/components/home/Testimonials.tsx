@@ -4,7 +4,7 @@ import React from "react";
 const testimonials = [
   {
     id: "1",
-    name: "Sarah Johnson",
+    name: "Sarah",
     role: "Interior Designer",
     quote:
       "The quality of furniture from Furnimal is exceptional. My clients always love the pieces I select from this collection.",
@@ -12,7 +12,7 @@ const testimonials = [
   },
   {
     id: "2",
-    name: "Michael Chen",
+    name: "Michael",
     role: "Home Owner",
     quote:
       "After searching for months, I finally found the perfect dining set at Furnimal. Excellent quality and the customer service was outstanding.",
@@ -20,7 +20,7 @@ const testimonials = [
   },
   {
     id: "3",
-    name: "Emily Rodriguez",
+    name: "Emilyz",
     role: "Architect",
     quote:
       "I appreciate the attention to detail and craftsmanship in every piece. Furnimal has become my go-to for quality furniture.",
