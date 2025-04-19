@@ -8,7 +8,7 @@ const testimonials = [
     role: "Interior Designer",
     quote:
       "The quality of furniture from Furnimal is exceptional. My clients always love the pieces I select from this collection.",
-    avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=1287&ixlib=rb-4.0.3",
+    avatar: "https://i.postimg.cc/Y2f4HQxH/POSTIMG.jpg",
   },
   {
     id: "2",
