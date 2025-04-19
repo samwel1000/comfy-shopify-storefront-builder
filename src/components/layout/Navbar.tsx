@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
+import { ThemeToggle } from "@/components/ui/theme-toggle";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -11,7 +12,7 @@ const Navbar = () => {
   };
 
   return (
-    <header className="bg-white w-full shadow-sm z-50 sticky top-0">
+    <header className="bg-background w-full shadow-sm z-50 sticky top-0">
       <div className="container-custom flex justify-between items-center py-4">
         {/* Logo */}
         <div className="flex items-center">
@@ -92,6 +93,8 @@ const Navbar = () => {
               <path d="M7.5 6v12.75m4.5-12.75H3m9 12.75H3"></path>
             </svg>
           </Button>
+          {/* Add Theme Toggle Button */}
+          <ThemeToggle />
         </div>
 
         {/* Mobile menu button */}
@@ -135,7 +138,7 @@ const Navbar = () => {
 
       {/* Mobile Navigation */}
       {isMenuOpen && (
-        <div className="md:hidden bg-white w-full py-4 px-6 shadow-md">
+        <div className="md:hidden bg-background w-full py-4 px-6 shadow-md">
           <div className="flex flex-col space-y-4">
             <Link
               to="/"
@@ -224,6 +227,8 @@ const Navbar = () => {
                   <path d="M7.5 6v12.75m4.5-12.75H3m9 12.75H3"></path>
                 </svg>
               </Button>
+              {/* Add Theme Toggle Button for mobile */}
+              <ThemeToggle />
             </div>
           </div>
         </div>
