@@ -39,7 +39,7 @@ const featuredProducts = [
     name: "Wooden Dining Set",
     price: 799.99,
     originalPrice: null,
-    image: "https://images.unsplash.com/photo-1604578762246-48370ce9b386?auto=format&fit=crop&q=80&w=1170&ixlib=rb-4.0.3",
+    image: "https://i.postimg.cc/mDQKTkH6/pexels-helen-alp-46790226-30114792.jpg",
     category: "Dining",
     isNew: true,
     isSale: false,
