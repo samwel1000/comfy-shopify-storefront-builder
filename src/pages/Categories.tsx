@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
 import ProductCard from "@/components/ui/ProductCard";
@@ -6,6 +5,8 @@ import { Toggle } from "@/components/ui/toggle";
 import { Switch } from "@/components/ui/switch";
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
 import { Button } from "@/components/ui/button";
+import Navbar from "@/components/layout/Navbar";
+import Footer from "@/components/layout/Footer";
 
 // Sample categories and products data - in a real app, this would come from an API
 const allCategories = [
@@ -56,7 +57,7 @@ const products = [
     name: "Wooden Dining Set",
     price: 799.99,
     originalPrice: null,
-    image: "https://images.unsplash.com/photo-1604578762246-48370ce9b386?auto=format&fit=crop&q=80&w=1170&ixlib=rb-4.0.3",
+    image: "https://images.unsplash.com/photo-1615800002234-05c4d488696c?auto=format&fit=crop&q=80&w=1187&ixlib=rb-4.0.3",
     category: "dining",
     categoryName: "Dining",
     isNew: true,
@@ -147,91 +148,100 @@ const Categories = () => {
   });
 
   return (
-    <div className="section-padding bg-furniture-light-gray">
-      <div className="container-custom">
-        <div className="text-center mb-12">
-          <h1 className="section-title">Shop Our Collection</h1>
-          <p className="section-subtitle">
-            Discover quality furniture pieces for every room in your home.
-          </p>
-        </div>
-        
-        {/* Category Filter */}
-        <div className="mb-8">
-          <h3 className="font-medium text-lg mb-3">Categories</h3>
-          <div className="flex flex-wrap gap-2">
-            <ToggleGroup type="single" value={selectedCategory} onValueChange={(value) => value && setSelectedCategory(value)}>
-              {allCategories.map((category) => (
-                <ToggleGroupItem key={category.id} value={category.id} className="border border-furniture-gray/20 hover:bg-furniture-accent hover:text-white">
-                  {category.name}
-                </ToggleGroupItem>
-              ))}
-            </ToggleGroup>
+    <div className="min-h-screen flex flex-col">
+      <Navbar />
+      <div className="section-padding bg-furniture-light-gray">
+        <div className="container-custom">
+          <div className="text-center mb-12 animate-fade-in">
+            <h1 className="section-title">Shop Our Collection</h1>
+            <p className="section-subtitle">
+              Discover quality furniture pieces for every room in your home.
+            </p>
           </div>
-        </div>
-        
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-8">
-          {/* Filters */}
-          <div className="flex flex-wrap gap-4 items-center">
-            <div className="flex items-center gap-2">
-              <Switch id="sale-filter" checked={showSaleOnly} onCheckedChange={setShowSaleOnly} />
-              <label htmlFor="sale-filter" className="text-sm cursor-pointer">Sale Items</label>
-            </div>
-            <div className="flex items-center gap-2">
-              <Switch id="new-filter" checked={showNewOnly} onCheckedChange={setShowNewOnly} />
-              <label htmlFor="new-filter" className="text-sm cursor-pointer">New Arrivals</label>
+          
+          {/* Category Filter */}
+          <div className="mb-8 animate-slide-in-right">
+            <h3 className="font-medium text-lg mb-3">Categories</h3>
+            <div className="flex flex-wrap gap-2">
+              <ToggleGroup type="single" value={selectedCategory} onValueChange={(value) => value && setSelectedCategory(value)}>
+                {allCategories.map((category) => (
+                  <ToggleGroupItem 
+                    key={category.id} 
+                    value={category.id} 
+                    className="border border-furniture-gray/20 hover:bg-furniture-accent hover:text-white transition-all duration-300"
+                  >
+                    {category.name}
+                  </ToggleGroupItem>
+                ))}
+              </ToggleGroup>
             </div>
           </div>
           
-          {/* Sort options */}
-          <div className="flex items-center gap-2">
-            <span className="text-sm">Sort by:</span>
-            <select 
-              value={sortOption} 
-              onChange={(e) => setSortOption(e.target.value)}
-              className="border border-furniture-gray/20 rounded px-2 py-1 text-sm"
-            >
-              <option value="featured">Featured</option>
-              <option value="price-low">Price: Low to High</option>
-              <option value="price-high">Price: High to Low</option>
-              <option value="newest">Newest</option>
-            </select>
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-8 animate-fade-in">
+            {/* Filters */}
+            <div className="flex flex-wrap gap-4 items-center">
+              <div className="flex items-center gap-2">
+                <Switch id="sale-filter" checked={showSaleOnly} onCheckedChange={setShowSaleOnly} />
+                <label htmlFor="sale-filter" className="text-sm cursor-pointer">Sale Items</label>
+              </div>
+              <div className="flex items-center gap-2">
+                <Switch id="new-filter" checked={showNewOnly} onCheckedChange={setShowNewOnly} />
+                <label htmlFor="new-filter" className="text-sm cursor-pointer">New Arrivals</label>
+              </div>
+            </div>
+            
+            {/* Sort options */}
+            <div className="flex items-center gap-2">
+              <span className="text-sm">Sort by:</span>
+              <select 
+                value={sortOption} 
+                onChange={(e) => setSortOption(e.target.value)}
+                className="border border-furniture-gray/20 rounded px-2 py-1 text-sm"
+              >
+                <option value="featured">Featured</option>
+                <option value="price-low">Price: Low to High</option>
+                <option value="price-high">Price: High to Low</option>
+                <option value="newest">Newest</option>
+              </select>
+            </div>
           </div>
-        </div>
-        
-        {/* Product Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-8">
-          {sortedProducts.map((product) => (
-            <ProductCard
-              key={product.id}
-              id={product.id}
-              name={product.name}
-              price={product.price}
-              originalPrice={product.originalPrice || undefined}
-              image={product.image}
-              category={product.categoryName}
-              isNew={product.isNew}
-              isSale={product.isSale}
-            />
-          ))}
-        </div>
-        
-        {sortedProducts.length === 0 && (
-          <div className="text-center py-12">
-            <p className="text-lg">No products found with the selected filters.</p>
-            <Button 
-              onClick={() => {
-                setSelectedCategory("all");
-                setShowSaleOnly(false);
-                setShowNewOnly(false);
-              }}
-              className="mt-4 bg-furniture-accent hover:bg-furniture-brown"
-            >
-              Clear Filters
-            </Button>
+          
+          {/* Product Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-8">
+            {sortedProducts.map((product) => (
+              <div key={product.id} className="animate-scale-in hover-scale">
+                <ProductCard
+                  id={product.id}
+                  name={product.name}
+                  price={product.price}
+                  originalPrice={product.originalPrice || undefined}
+                  image={product.image}
+                  category={product.categoryName}
+                  isNew={product.isNew}
+                  isSale={product.isSale}
+                />
+              </div>
+            ))}
           </div>
-        )}
+          
+          {sortedProducts.length === 0 && (
+            <div className="text-center py-12">
+              <p className="text-lg">No products found with the selected filters.</p>
+              <Button 
+                onClick={() => {
+                  setSelectedCategory("all");
+                  setShowSaleOnly(false);
+                  setShowNewOnly(false);
+                }}
+                className="mt-4 bg-furniture-accent hover:bg-furniture-brown"
+              >
+                Clear Filters
+              </Button>
+            </div>
+          )}
+        </div>
       </div>
+      <Footer />
     </div>
   );
 };
