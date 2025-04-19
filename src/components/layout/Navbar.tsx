@@ -1,8 +1,7 @@
 
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { ThemeToggle } from "@/components/ui/theme-toggle";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -16,6 +15,7 @@ import { cn } from "@/lib/utils";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const location = useLocation();
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -27,7 +27,7 @@ const Navbar = () => {
         {/* Logo */}
         <div className="flex items-center">
           <Link to="/" className="text-2xl font-jost font-bold tracking-tight hover-scale transition-transform">
-            Furnimal
+            Bright Furniture
           </Link>
         </div>
 
@@ -146,7 +146,7 @@ const Navbar = () => {
           </NavigationMenuList>
         </NavigationMenu>
 
-        {/* CTA buttons */}
+        {/* Search button */}
         <div className="hidden md:flex items-center space-x-4">
           <Button variant="ghost" size="icon" className="hover-scale">
             <svg
@@ -165,42 +165,6 @@ const Navbar = () => {
               <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
             </svg>
           </Button>
-          <Button variant="ghost" size="icon" className="hover-scale">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              className="w-5 h-5"
-            >
-              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-              <circle cx="12" cy="7" r="4"></circle>
-            </svg>
-          </Button>
-          <Button variant="ghost" size="icon" className="hover-scale">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              className="w-5 h-5"
-            >
-              <path d="M21 8.25c0 2.485-2.02 4.5-4.5 4.5s-4.5-2.015-4.5-4.5S14.02 3.75 16.5 3.75s4.5 2.015 4.5 4.5z"></path>
-              <path d="M7.5 6v12.75m4.5-12.75H3m9 12.75H3"></path>
-            </svg>
-          </Button>
-          {/* Add Theme Toggle Button */}
-          <ThemeToggle />
         </div>
 
         {/* Mobile menu button */}
@@ -337,7 +301,7 @@ const Navbar = () => {
               </div>
             </div>
             
-            <div className="flex space-x-4 pt-2 border-t border-border">
+            <div className="flex items-center pt-2 border-t border-border">
               <Button variant="ghost" size="icon">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -355,42 +319,6 @@ const Navbar = () => {
                   <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
                 </svg>
               </Button>
-              <Button variant="ghost" size="icon">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className="w-5 h-5"
-                >
-                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                  <circle cx="12" cy="7" r="4"></circle>
-                </svg>
-              </Button>
-              <Button variant="ghost" size="icon">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className="w-5 h-5"
-                >
-                  <path d="M21 8.25c0 2.485-2.02 4.5-4.5 4.5s-4.5-2.015-4.5-4.5S14.02 3.75 16.5 3.75s4.5 2.015 4.5 4.5z"></path>
-                  <path d="M7.5 6v12.75m4.5-12.75H3m9 12.75H3"></path>
-                </svg>
-              </Button>
-              {/* Add Theme Toggle Button for mobile */}
-              <ThemeToggle />
             </div>
           </div>
         </div>

@@ -1,24 +1,18 @@
 
 import React from "react";
 import { Button } from "./button";
-import { useTheme } from "@/hooks/use-theme";
-import { Sun, Moon } from "lucide-react";
+import { Sun } from "lucide-react";
 
+// This component is kept for future reference but not used in the current light-mode-only design
 export const ThemeToggle: React.FC = () => {
-  const { theme, toggleTheme } = useTheme();
-
   return (
     <Button
       variant="ghost"
       size="icon"
-      onClick={toggleTheme}
-      aria-label={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}
+      aria-label="Light mode"
+      disabled={true}
     >
-      {theme === 'light' ? (
-        <Moon className="h-5 w-5" />
-      ) : (
-        <Sun className="h-5 w-5" />
-      )}
+      <Sun className="h-5 w-5" />
     </Button>
   );
 };

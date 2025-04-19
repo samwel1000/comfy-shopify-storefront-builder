@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
 import ProductCard from "@/components/ui/ProductCard";
@@ -57,7 +58,7 @@ const products = [
     name: "Wooden Dining Set",
     price: 799.99,
     originalPrice: null,
-    image: "https://images.unsplash.com/photo-1615800002234-05c4d488696c?auto=format&fit=crop&q=80&w=1187&ixlib=rb-4.0.3",
+    image: "https://images.unsplash.com/photo-1615796030859-31a561061db7?auto=format&fit=crop&q=80&w=1170&ixlib=rb-4.0.3",
     category: "dining",
     categoryName: "Dining",
     isNew: true,
@@ -107,6 +108,138 @@ const products = [
     isNew: false,
     isSale: false,
   },
+  {
+    id: "9",
+    name: "Nairobi Leather Armchair",
+    price: 399.99,
+    originalPrice: 499.99,
+    image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&q=80&w=1158&ixlib=rb-4.0.3",
+    category: "living-room",
+    categoryName: "Living Room",
+    isNew: true,
+    isSale: false,
+  },
+  {
+    id: "10",
+    name: "Mombasa Rattan Chair",
+    price: 199.99,
+    originalPrice: null,
+    image: "https://images.unsplash.com/photo-1580480055273-228ff5388ef8?auto=format&fit=crop&q=80&w=1000&ixlib=rb-4.0.3",
+    category: "living-room",
+    categoryName: "Living Room",
+    isNew: true,
+    isSale: false,
+  },
+  {
+    id: "11",
+    name: "Nakuru Storage Cabinet",
+    price: 449.99,
+    originalPrice: 549.99,
+    image: "https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?auto=format&fit=crop&q=80&w=1170&ixlib=rb-4.0.3",
+    category: "living-room",
+    categoryName: "Living Room",
+    isNew: false,
+    isSale: true,
+  },
+  {
+    id: "12",
+    name: "Kisumu Bamboo Shelf",
+    price: 249.99,
+    originalPrice: null,
+    image: "https://images.unsplash.com/photo-1595428774223-ef52624120d2?auto=format&fit=crop&q=80&w=1170&ixlib=rb-4.0.3",
+    category: "living-room",
+    categoryName: "Living Room",
+    isNew: false,
+    isSale: false,
+  },
+  {
+    id: "13",
+    name: "Eldoret King Bed",
+    price: 999.99,
+    originalPrice: 1199.99,
+    image: "https://images.unsplash.com/photo-1505693314120-0d443867891c?auto=format&fit=crop&q=80&w=1170&ixlib=rb-4.0.3",
+    category: "bedroom",
+    categoryName: "Bedroom",
+    isNew: true,
+    isSale: false,
+  },
+  {
+    id: "14",
+    name: "Malindi 6-Seater Dining Table",
+    price: 799.99,
+    originalPrice: 899.99,
+    image: "https://images.unsplash.com/photo-1617806118233-18e1de247200?auto=format&fit=crop&q=80&w=1332&ixlib=rb-4.0.3",
+    category: "dining",
+    categoryName: "Dining",
+    isNew: false,
+    isSale: true,
+  },
+  {
+    id: "15",
+    name: "Naivasha Outdoor Table Set",
+    price: 699.99,
+    originalPrice: null,
+    image: "https://images.unsplash.com/photo-1595435934249-5df7ed86e1c0?auto=format&fit=crop&q=80&w=1170&ixlib=rb-4.0.3",
+    category: "outdoor",
+    categoryName: "Outdoor",
+    isNew: true,
+    isSale: false,
+  },
+  {
+    id: "16",
+    name: "Lamu Wicker Chair",
+    price: 159.99,
+    originalPrice: 199.99,
+    image: "https://images.unsplash.com/photo-1586208958839-06c17cacdf08?auto=format&fit=crop&q=80&w=1180&ixlib=rb-4.0.3",
+    category: "outdoor",
+    categoryName: "Outdoor",
+    isNew: false,
+    isSale: true,
+  },
+  {
+    id: "17",
+    name: "Machakos Executive Desk",
+    price: 649.99,
+    originalPrice: 749.99,
+    image: "https://images.unsplash.com/photo-1593062096033-9a26b09da705?auto=format&fit=crop&q=80&w=1170&ixlib=rb-4.0.3",
+    category: "office",
+    categoryName: "Office",
+    isNew: false,
+    isSale: true,
+  },
+  {
+    id: "18",
+    name: "Kitui Ergonomic Chair",
+    price: 299.99,
+    originalPrice: 349.99,
+    image: "https://images.unsplash.com/photo-1505843490578-27dbb2f11caa?auto=format&fit=crop&q=80&w=1287&ixlib=rb-4.0.3",
+    category: "office",
+    categoryName: "Office",
+    isNew: true,
+    isSale: true,
+  },
+  {
+    id: "19",
+    name: "Nyeri Bookshelf",
+    price: 349.99,
+    originalPrice: null,
+    image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&q=80&w=1158&ixlib=rb-4.0.3",
+    category: "living-room",
+    categoryName: "Living Room",
+    isNew: false,
+    isSale: false,
+  },
+  {
+    id: "20",
+    name: "Karen Coffee Table Set",
+    price: 369.99,
+    originalPrice: 399.99,
+    image: "https://images.unsplash.com/photo-1592078615290-033ee584e267?auto=format&fit=crop&q=80&w=1160&ixlib=rb-4.0.3",
+    category: "living-room",
+    categoryName: "Living Room",
+    isNew: true,
+    isSale: true,
+  }
 ];
 
 const Categories = () => {
@@ -155,7 +288,10 @@ const Categories = () => {
           <div className="text-center mb-12 animate-fade-in">
             <h1 className="section-title">Shop Our Collection</h1>
             <p className="section-subtitle">
-              Discover quality furniture pieces for every room in your home.
+              Discover quality furniture pieces for every room in your home, available for delivery across Kenya.
+            </p>
+            <p className="text-sm text-furniture-gray mt-2">
+              Visit our showrooms in Nairobi, Mombasa, Kisumu, and Nakuru
             </p>
           </div>
           
@@ -208,8 +344,8 @@ const Categories = () => {
           
           {/* Product Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-8">
-            {sortedProducts.map((product) => (
-              <div key={product.id} className="animate-scale-in hover-scale">
+            {sortedProducts.map((product, index) => (
+              <div key={product.id} className="animate-scale-in hover-scale" style={{ animationDelay: `${index * 0.05}s` }}>
                 <ProductCard
                   id={product.id}
                   name={product.name}
